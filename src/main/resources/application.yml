@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      function:
+        definition: consumer
+      bindings:
+        consumer-in-0:
+          destination: sample.queue2
+          group: consumer
+
+server:
+  port: 8082
